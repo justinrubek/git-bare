@@ -21,13 +21,13 @@
           clone = pkgs.writeShellApplication {
             name = "git-bare-clone";
             runtimeInputs = [];
-            text = builtins.readFile ./git-bareclone.sh;
+            text = builtins.readFile ./clone.sh;
           };
 
           init = pkgs.writeShellApplication {
             name = "git-bare-init";
             runtimeInputs = [];
-            text = builtins.readFile ./git-bareinit.sh;
+            text = builtins.readFile ./init.sh;
           };
         };
       };
