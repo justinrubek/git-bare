@@ -9,14 +9,7 @@
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = import inputs.systems;
 
-      perSystem = {
-        config,
-        pkgs,
-        system,
-        inputs',
-        self',
-        ...
-      }: {
+      perSystem = {pkgs, ...}: {
         packages = {
           clone = pkgs.writeShellApplication {
             name = "git-bare-clone";
