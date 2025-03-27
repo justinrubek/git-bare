@@ -17,13 +17,17 @@
         self',
         ...
       }: {
-        packages = rec {
-          default = git-bareclone;
-
-          git-bareclone = pkgs.writeShellApplication {
-            name = "git-bareclone";
+        packages = {
+          clone = pkgs.writeShellApplication {
+            name = "git-bare-clone";
             runtimeInputs = [];
             text = builtins.readFile ./git-bareclone.sh;
+          };
+
+          init = pkgs.writeShellApplication {
+            name = "git-bare-init";
+            runtimeInputs = [];
+            text = builtins.readFile ./git-bareinit.sh;
           };
         };
       };
